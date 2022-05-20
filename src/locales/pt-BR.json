@@ -1,0 +1,46 @@
+{
+  "LOGIN": {
+    "TITLE": "Entrar",
+    "SUBTITLE": "Informe suas credenciais",
+    "EMAIL": "Email",
+    "PASSWORD": "Senha",
+    "SUBMIT": "Entrar",
+    "ERROR": "Por favor, verifique suas credenciais e tente novamente"
+  },
+  "DEVICE": {
+    "TITLE": "Dispositivos",
+    "SHOW_TITLE": "Dispositivo",
+    "SHOW_SUBTITLE": "As informações do dispositivo",
+    "EDIT_TITLE": "EDITAR DISPOSITIVO",
+    "EDIT_SUBTITLE": "Informe as informações do dispositivo",
+    "ADD_TITLE": "ADICIONAR DISPOSITIVO",
+    "ADD_SUBTITLE": "Informe as informações do dispositivo",
+    "DELETE_TITLE": "DELETAR DISPOSITIVO",
+    "DELETE_CONFIRMATION": "Tem certeza que deseja deletar este dispositivo ?",
+    "DELETE_SUBMIT": "Deletar",
+    "SUBMIT": "Salvar",
+    "RESOURCES": {
+      "ID": "ID",
+      "NAME": "Nome",
+      "TOPIC": "Tópico",
+      "ACTIONS": "Ações"
+    },
+    "ERROR": "Algo deu errado ao tentar carregar os recursos"
+  },
+  "ASIDEMENU": {
+    "TITLE": "LED IOT",
+    "LOGOUT": "Sair",
+    "DEVICES": "Dispositivos"
+  },
+  "ERROR": {
+    "EXPIRED_SESSION": "Sua sessão expirou.",
+    "VALIDATION": {
+      "NUMBER": "Um número deve ser informado",
+      "MIN": "Abaixo do mínimo de caracteres necessários",
+      "MAX": "Você excedeu a quantidade de caracteres permitidos",
+      "EMAIL": "Deve ser um e-mail válido",
+      "REQUIRED": "O campo é obrigatório",
+      "DATE": "Deve ser uma data válida"
+    }
+  }
+}
