@@ -7,6 +7,11 @@
     "SUBMIT": "Entrar",
     "ERROR": "Por favor, verifique suas credenciais e tente novamente"
   },
+  "COMMON": {
+    "STATUS": "Informações",
+    "YES": "Sim",
+    "NO": "Não"
+  },
   "DEVICE": {
     "TITLE": "Dispositivos",
     "SHOW_TITLE": "Dispositivo",
@@ -19,18 +24,28 @@
     "DELETE_CONFIRMATION": "Tem certeza que deseja deletar este dispositivo ?",
     "DELETE_SUBMIT": "Deletar",
     "SUBMIT": "Salvar",
+    "TURNON": "Ligar",
+    "TURNOFF": "Desligar",
+    "TURNEDON": "Ligado",
+    "TURNEDOFF": "Desligado",
+    "STATUS": "Estado do dispositivo:",
+    "CONNECTION_BROKER": "Conexão com o broker?",
     "RESOURCES": {
       "ID": "ID",
       "NAME": "Nome",
       "TOPIC": "Tópico",
       "ACTIONS": "Ações"
     },
-    "ERROR": "Algo deu errado ao tentar carregar os recursos"
+    "ERROR": "Algo deu errado ao tentar carregar os recursos",
+    "MQTT": {
+      "NOT_CONNECTED": "Não foi possível estabelecer uma conexão com o broker ou o tópico está indefinido."
+    }
   },
   "ASIDEMENU": {
     "TITLE": "LED IOT",
     "LOGOUT": "Sair",
-    "DEVICES": "Dispositivos"
+    "DEVICES": "Dispositivos",
+    "DEVICE_MANAGEMENT": "Gerenciamento de dispositivos"
   },
   "ERROR": {
     "EXPIRED_SESSION": "Sua sessão expirou.",

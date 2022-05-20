@@ -1,9 +1,8 @@
 import { initReactI18next } from 'react-i18next';
 import i18next, { InitOptions, Resource } from 'i18next';
 import ptBR from '../locales/pt-BR.json';
-import enUS from '../locales/en-US.json';
 
-const availableLanguages = ['pt-BR', 'en-US'];
+const availableLanguages = ['pt-BR'];
 
 const translationOptions: InitOptions = {
   lng: 'pt-BR',
@@ -21,7 +20,6 @@ const translationOptions: InitOptions = {
   },
   resources: {
     'pt-BR': ptBR as Resource,
-    'en-US': enUS as Resource,
   },
 };
 

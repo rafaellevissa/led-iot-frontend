@@ -1,5 +1,5 @@
 import { Divider, List, Toolbar, Typography } from '@mui/material';
-import { Group, Lightbulb } from '@mui/icons-material';
+import { ManageSearch, Lightbulb } from '@mui/icons-material';
 import ListItemLink from '../../ListItemLink';
 import LogOut from '../Logout';
 
@@ -19,16 +19,16 @@ export default function SideBar(props: DrawerProps) {
 			</Toolbar>
 			<Divider />
 			<List>
-				<ListItemLink to="/" primary={translate('ASIDEMENU:DEVICES')} icon={ <Lightbulb /> } isCollapsed />
+				<ListItemLink to="/" primary={translate('ASIDEMENU:DEVICES')} icon={<Lightbulb />} isCollapsed />
 			</List>
 			<Divider />
 			<List>
-				<ListItemLink to="/" primary={translate('ASIDEMENU:DEVICE')} icon={ <Group /> } isCollapsed />
+				<ListItemLink to="/device" primary={translate('ASIDEMENU:DEVICE_MANAGEMENT')} icon={<ManageSearch />} isCollapsed />
 			</List>
 			<Divider />
 			<Toolbar sx={{ flexGrow: 1 }} />
 			<Divider />
 			<LogOut />
-        </CustomDrawer>
-    );
+		</CustomDrawer>
+	);
 }
