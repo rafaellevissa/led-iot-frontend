@@ -38,59 +38,69 @@ const AddModal = () => {
         {translate('DEVICE:TITLE')}
       </Button>
       <Modal open={open} onClose={handleClose}>
-        <Container component='main' maxWidth="xs" sx={{ position: 'absolute', top: '20%', left: '35%' }}>
-          <Paper variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }} >
-            <Typography component="h1" variant="h5">
-              {translate('DEVICE:TITLE')}
-            </Typography>
-            <Typography>
-              {translate('DEVICE:ADD_SUBTITLE')}
-            </Typography>
-            <Formik {...formikConfig}>
-              {({ handleSubmit, errors, setFieldValue, values }) => (
-                <form onSubmit={handleSubmit}>
-                  <Field
-                    name="name"
-                    label={translate('DEVICE:RESOURCES:NAME')}
-                    margin="normal"
-                    required
-                    fullWidth
-                    component={TextField}
-                    helperText={translate(errors.name as string)}
-                    error={errors?.name}
-                    onChange={({ target }: React.ChangeEvent<HTMLInputElement>) =>
-                      setFieldValue('name', target.value)
-                    }
-                  />
-                  <Field
-                    name="topic"
-                    label={translate('DEVICE:RESOURCES:TOPIC')}
-                    margin="normal"
-                    required
-                    fullWidth
-                    component={TextField}
-                    placeholder="MQTTEnvia1:MQTTRecebe1"
-                    helperText={translate(errors.topic as string)}
-                    error={errors?.topic}
-                    onChange={({ target }: React.ChangeEvent<HTMLInputElement>) =>
-                      setFieldValue('topic', target.value)
-                    }
-                  />
-                  <Button
-                    type='submit'
-                    variant="contained"
-                    color="success"
-                    fullWidth
-                    startIcon={<AddIcon />}
-                    sx={{ mt: 2 }}
-                  >
-                    {translate('DEVICE:SUBMIT')}
-                  </Button>
-                </form>
-              )}
-            </Formik>
-          </Paper>
-        </Container>
+        <Paper
+          elevation={1}
+          variant="outlined"
+          sx={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            minWidth: 300,
+            boxShadow: 24,
+            p: 4,
+          }}
+        >
+          <Typography component="h1" variant="h5">
+            {translate('DEVICE:TITLE')}
+          </Typography>
+          <Typography>
+            {translate('DEVICE:ADD_SUBTITLE')}
+          </Typography>
+          <Formik {...formikConfig}>
+            {({ handleSubmit, errors, setFieldValue, values }) => (
+              <form onSubmit={handleSubmit}>
+                <Field
+                  name="name"
+                  label={translate('DEVICE:RESOURCES:NAME')}
+                  margin="normal"
+                  required
+                  fullWidth
+                  component={TextField}
+                  helperText={translate(errors.name as string)}
+                  error={errors?.name}
+                  onChange={({ target }: React.ChangeEvent<HTMLInputElement>) =>
+                    setFieldValue('name', target.value)
+                  }
+                />
+                <Field
+                  name="topic"
+                  label={translate('DEVICE:RESOURCES:TOPIC')}
+                  margin="normal"
+                  required
+                  fullWidth
+                  component={TextField}
+                  placeholder="MQTTEnvia1:MQTTRecebe1"
+                  helperText={translate(errors.topic as string)}
+                  error={errors?.topic}
+                  onChange={({ target }: React.ChangeEvent<HTMLInputElement>) =>
+                    setFieldValue('topic', target.value)
+                  }
+                />
+                <Button
+                  type='submit'
+                  variant="contained"
+                  color="success"
+                  fullWidth
+                  startIcon={<AddIcon />}
+                  sx={{ mt: 2 }}
+                >
+                  {translate('DEVICE:SUBMIT')}
+                </Button>
+              </form>
+            )}
+          </Formik>
+        </Paper>
       </Modal>
     </div>
   )

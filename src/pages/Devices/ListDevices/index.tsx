@@ -42,7 +42,7 @@ export const ListDevicesPage = () => {
 		{
 			field: 'actions',
 			headerName: translate('DEVICE:RESOURCES:ACTIONS'),
-			minWidth: 50,
+			minWidth: 100,
 			flex: 1,
 
 			renderCell: (params: GridCellParams) => {

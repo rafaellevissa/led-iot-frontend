@@ -10,7 +10,7 @@ const ShowModal = (props: any) => {
   const dispatch = useDispatch()
   const { itemEdit } = useSelector<any, any>(item => item.device)
   const [open, setOpen] = React.useState(false);
-  const {translate} = useTranslation()
+  const { translate } = useTranslation()
 
   React.useEffect(() => {
     if (open) {
@@ -24,7 +24,7 @@ const ShowModal = (props: any) => {
       topic: itemEdit?.topic,
       name: itemEdit?.name,
     },
-    onSubmit: () => {},
+    onSubmit: () => { },
   }
 
   const handleOpen = () => setOpen(true);
@@ -33,43 +33,51 @@ const ShowModal = (props: any) => {
   return (
     <>
       <IconButton aria-label="edit" onClick={handleOpen}>
-				<VisibilityIcon />
-			</IconButton>
+        <VisibilityIcon />
+      </IconButton>
       <Modal open={open} onClose={handleClose}>
-        <Container component='main' maxWidth="xs" sx={{ position: 'absolute', top: '20%', left: '35%' }}>
-          <Paper variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }} >
-            <Typography component="h1" variant="h5">
-              {translate('DEVICE:SHOW_TITLE')}
-            </Typography>
-            <Typography>
-              {translate('DEVICE:SHOW_SUBTITLE')}
-            </Typography>
-            <Formik {...formikConfig}>
-              {({ handleSubmit, values }) => (
-                <form onSubmit={handleSubmit}>
-                  <Field
-                    name="name"
-                    label={translate('DEVICE:RESOURCES:NAME')}
-                    margin="normal"
-                    fullWidth
-                    value={values?.name}
-                    component={TextField}
-                    disabled
-                  />
-                  <Field
-                    name="topic"
-                    label={translate('DEVICE:RESOURCES:TOPIC')}
-                    margin="normal"
-                    fullWidth
-                    value={values?.topic}
-                    component={TextField}
-                    disabled
-                  />
-                </form>
-              )}
-              </Formik>
-          </Paper>
-        </Container>
+        <Paper
+          elevation={1}
+          variant="outlined"
+          sx={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            minWidth: 300,
+            boxShadow: 24,
+            p: 4,
+          }}
+        >
+          <Typography component="h1" variant="h5">
+            {translate('DEVICE:SHOW_TITLE')}
+          </Typography>
+          <Typography>
+            {translate('DEVICE:SHOW_SUBTITLE')}
+          </Typography>
+          <Formik {...formikConfig}>
+            {({ handleSubmit, values }) => (
+              <form onSubmit={handleSubmit}>
+                <Field
+                  name="name"
+                  margin="normal"
+                  fullWidth
+                  value={values?.name}
+                  component={TextField}
+                  disabled
+                />
+                <Field
+                  name="topic"
+                  margin="normal"
+                  fullWidth
+                  value={values?.topic}
+                  component={TextField}
+                  disabled
+                />
+              </form>
+            )}
+          </Formik>
+        </Paper>
       </Modal>
     </>
   )
