@@ -10,7 +10,7 @@ import { useTranslation } from '../../../../hooks/use-translation';
 
 const AddModal = () => {
   const dispatch = useDispatch()
-  const {translate} = useTranslation()
+  const { translate } = useTranslation()
 
   const [open, setOpen] = React.useState(false);
 
@@ -27,14 +27,14 @@ const AddModal = () => {
     onSubmit: handleSubmit,
     enableReinitialize: true
   }
-  
+
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
   return (
-    <div> 
-      <Button size='medium' startIcon={ <AddIcon /> } color='primary' variant='contained' sx={{ mt: 3, mb: 3 }} onClick={handleOpen} >
+    <div>
+      <Button size='medium' startIcon={<AddIcon />} color='primary' variant='contained' sx={{ mt: 3, mb: 3 }} onClick={handleOpen} >
         {translate('DEVICE:TITLE')}
       </Button>
       <Modal open={open} onClose={handleClose}>
@@ -58,7 +58,7 @@ const AddModal = () => {
                     component={TextField}
                     helperText={translate(errors.name as string)}
                     error={errors?.name}
-                    onChange={({ target }: React.ChangeEvent<HTMLInputElement>) => 
+                    onChange={({ target }: React.ChangeEvent<HTMLInputElement>) =>
                       setFieldValue('name', target.value)
                     }
                   />
@@ -69,9 +69,10 @@ const AddModal = () => {
                     required
                     fullWidth
                     component={TextField}
+                    placeholder="MQTTEnvia1:MQTTRecebe1"
                     helperText={translate(errors.topic as string)}
                     error={errors?.topic}
-                    onChange={({ target }: React.ChangeEvent<HTMLInputElement>) => 
+                    onChange={({ target }: React.ChangeEvent<HTMLInputElement>) =>
                       setFieldValue('topic', target.value)
                     }
                   />
@@ -87,7 +88,7 @@ const AddModal = () => {
                   </Button>
                 </form>
               )}
-              </Formik>
+            </Formik>
           </Paper>
         </Container>
       </Modal>

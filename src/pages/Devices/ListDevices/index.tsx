@@ -20,7 +20,7 @@ export const ListDevicesPage = () => {
 	const { item, error, loading } = useSelector<any, any>(item => item.device)
 	const [page, setPage] = useState<Page>({
 		currentPage: 0,
-		perPage: 10
+		perPage: 20
 	});
 
 	useEffect(() => {
@@ -39,14 +39,13 @@ export const ListDevicesPage = () => {
 	const columns: GridColDef[] = [
 		{ field: 'id', headerName: translate('DEVICE:RESOURCES:ID'), minWidth: 30, flex: 0.3 },
 		{ field: 'name', headerName: translate('DEVICE:RESOURCES:NAME'), minWidth: 200, flex: 1 },
-		{ 
-			field: 'actions', 
+		{
+			field: 'actions',
 			headerName: translate('DEVICE:RESOURCES:ACTIONS'),
-			minWidth: 50, 
+			minWidth: 50,
 			flex: 1,
-			
-			renderCell: (params: GridCellParams) =>
-			{
+
+			renderCell: (params: GridCellParams) => {
 				return (
 					<div>
 						<Show id={params.row.id} />
@@ -72,9 +71,9 @@ export const ListDevicesPage = () => {
 
 				<Grid item xs={12}>
 					{Array.isArray(item?.data) && (
-						<CustomDataGrid 
+						<CustomDataGrid
 							div={{ width: '100%', height: 500 }}
-							dataGrid={{ 
+							dataGrid={{
 								columns,
 								rows: item.data,
 								total: item.meta.total,
@@ -89,10 +88,10 @@ export const ListDevicesPage = () => {
 			</Grid>
 
 			<Snackbar open={error} autoHideDuration={300}>
-        <Alert severity="error" sx={{ width: '100%' }}>
-          {translate('DEVICE:ERROR')}
-        </Alert>
-      </Snackbar>
+				<Alert severity="error" sx={{ width: '100%' }}>
+					{translate('DEVICE:ERROR')}
+				</Alert>
+			</Snackbar>
 		</Layout>
 	);
 }

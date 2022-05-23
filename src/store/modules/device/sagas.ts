@@ -53,7 +53,7 @@ export function* find({ payload }: Action): Generator {
 export function* list({ payload }: Action): Generator {
   try {
     const request = payload as Page;
-    const url = request.currentPage ?
+    const url = request.currentPage !== undefined ?
       `/devices?page=${request.currentPage + 1}&perPage=${request.perPage}` :
       '/devices';
 

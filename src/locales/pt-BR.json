@@ -55,7 +55,8 @@
       "MAX": "Você excedeu a quantidade de caracteres permitidos",
       "EMAIL": "Deve ser um e-mail válido",
       "REQUIRED": "O campo é obrigatório",
-      "DATE": "Deve ser uma data válida"
+      "DATE": "Deve ser uma data válida",
+      "TOPIC_FORMATION": "Formato inválido para tópico"
     }
   }
 }

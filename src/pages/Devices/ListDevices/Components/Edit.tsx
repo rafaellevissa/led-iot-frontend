@@ -11,7 +11,7 @@ const EditModal = (props: any) => {
   const dispatch = useDispatch()
   const { itemEdit } = useSelector<any, any>(item => item.device)
   const [open, setOpen] = React.useState(false);
-  const {translate} = useTranslation()
+  const { translate } = useTranslation()
 
   React.useEffect(() => {
     if (open) {
@@ -44,8 +44,8 @@ const EditModal = (props: any) => {
   return (
     <>
       <IconButton aria-label="edit" onClick={handleOpen}>
-				<EditIcon />
-			</IconButton>
+        <EditIcon />
+      </IconButton>
       <Modal open={open} onClose={handleClose}>
         <Container component='main' maxWidth="xs" sx={{ position: 'absolute', top: '20%', left: '35%' }}>
           <Paper variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }} >
@@ -64,27 +64,28 @@ const EditModal = (props: any) => {
                     margin="normal"
                     required
                     fullWidth
-                    value={values?.name}
                     component={TextField}
                     helperText={translate(errors.name as string)}
                     error={errors?.name}
-                    onChange={({ target }: React.ChangeEvent<HTMLInputElement>) => 
+                    onChange={({ target }: React.ChangeEvent<HTMLInputElement>) =>
                       setFieldValue('name', target.value)
                     }
+                    value={values?.name}
                   />
                   <Field
                     name="topic"
-                    label={translate('DEVICE:RESOURCES:NAME')}
+                    label={translate('DEVICE:RESOURCES:TOPIC')}
                     margin="normal"
                     required
                     fullWidth
-                    value={values?.topic}
                     component={TextField}
+                    placeholder="MQTTEnvia1:MQTTRecebe1"
                     helperText={translate(errors.topic as string)}
                     error={errors?.topic}
-                    onChange={({ target }: React.ChangeEvent<HTMLInputElement>) => 
+                    onChange={({ target }: React.ChangeEvent<HTMLInputElement>) =>
                       setFieldValue('topic', target.value)
                     }
+                    value={values?.topic}
                   />
                   <Button
                     type='submit'
@@ -98,7 +99,7 @@ const EditModal = (props: any) => {
                   </Button>
                 </form>
               )}
-              </Formik>
+            </Formik>
           </Paper>
         </Container>
       </Modal>
